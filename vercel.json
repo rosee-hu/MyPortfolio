@@ -3,8 +3,5 @@
   "builds": [
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "img/**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/myProfile.html" }
   ]
 }
