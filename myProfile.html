@@ -262,36 +262,23 @@ h1, .navbar-brand {
   color: #ffffff;
 }
 
- /* Certificates row: make all cards equal height */
-#certificates .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-#certificates .col-md-6,
-#certificates .col-lg-3 {
-  display: flex;
-}
-
-/* Bubble Card – flex to fill parent height */
-.bubble-card {
+    /* Certificates */
+    .bubble-card {
   border-radius: 25px;
   background: #35699e8d;
   color: #fff;
   font-weight: 500;
   transition: transform 0.3s, background 0.3s;
+  height: 380px; /* fixed height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* button at bottom */
-  flex: 1;                        /* stretch to equal height */
-  padding: 1rem;
+  justify-content: space-between;
 }
+    .bubble-card:hover {
+      transform: scale(1.05);
+      background: #336699;
+    }
 
-.bubble-card:hover {
-  transform: scale(1.05);
-  background: #336699;
-}
 
    /* Footer */
 footer {
