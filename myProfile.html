@@ -41,34 +41,58 @@ h1, .navbar-brand {
 .navbar-nav .nav-link {
   font-size: 0.95rem; /* mobile */
 }
+.hero {
+  padding-top: 70px; /* adjust to match your navbar height */
+}
 
 /* Tablet */
 @media (min-width: 768px) {
   body { font-size: 1.1rem; }
   h1, .navbar-brand { font-size: 1.8rem; }
   .navbar-nav .nav-link { font-size: 1.05rem; }
-   /* Add space before hero logo */
+   
+  .hero {
+    min-height: auto; /* remove full viewport height for mobile */
+    display: block;   /* remove flex centering */
+    padding-top: 100px; /* space below navbar */
+    padding-bottom: 40px; 
+    text-align: center; /* keep text centered */
+  }
+
+  .hero-content {
+    display: block;
+  }
+
   .hero-logo {
-    margin-top: 20px; /* adds spacing above the logo */
+    margin-top: 20px;   /* space before logo */
     margin-left: auto;
-    margin-right: auto; /* center horizontally */
+    margin-right: auto;
     display: block;
   }
 
-  /* Certificates card button fits inside card */
-  .bubble-card .btn {
-    width: 90%;         /* button takes almost full card width */
-    margin: 0 auto 10px auto; /* center button and add bottom spacing */
-    display: block;
-    font-size: 0.9rem; /* slightly smaller on mobile */
-  }
-
-  /* Adjust hero text for small screens */
+  /* Optional: adjust hero heading and paragraph */
   .hero h1 {
     font-size: 1.8rem;
   }
   .hero p {
     font-size: 1rem;
+  }
+
+  .bubble-card img.card-img-top {
+    max-height: 60px !important;
+  }
+
+  .bubble-card .card-title {
+    font-size: 0.8rem !important;
+  }
+
+  .bubble-card .card-text {
+    font-size: 0.7rem !important;
+  }
+
+  .bubble-card .btn {
+    font-size: 0.75rem !important;
+    padding: 3px 5px !important;
   }
 }
 
@@ -238,23 +262,36 @@ h1, .navbar-brand {
   color: #ffffff;
 }
 
-    /* Certificates */
-    .bubble-card {
+ /* Certificates row: make all cards equal height */
+#certificates .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#certificates .col-md-6,
+#certificates .col-lg-3 {
+  display: flex;
+}
+
+/* Bubble Card – flex to fill parent height */
+.bubble-card {
   border-radius: 25px;
   background: #35699e8d;
   color: #fff;
   font-weight: 500;
   transition: transform 0.3s, background 0.3s;
-  height: 380px; /* fixed height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* button at bottom */
+  flex: 1;                        /* stretch to equal height */
+  padding: 1rem;
 }
-    .bubble-card:hover {
-      transform: scale(1.05);
-      background: #336699;
-    }
 
+.bubble-card:hover {
+  transform: scale(1.05);
+  background: #336699;
+}
 
    /* Footer */
 footer {
